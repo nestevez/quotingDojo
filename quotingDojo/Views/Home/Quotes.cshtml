@@ -1,0 +1,27 @@
+@{
+    ViewData["Title"] = "Quoting Dojo";
+}
+<h2>Here are some awesome quotes!</h2>
+@{
+    @for(int i = 0; i < @ViewBag.allquotes.Count; i++)
+    {
+        <p>
+            @ViewBag.allquotes[i]["quote"]
+        </p>
+        <p>
+            - @ViewBag.allquotes[i]["name"]
+        </p>
+    }
+    //<table>
+    //    foreach(Dictionary<string,object> quote in @ViewBag.allquotes)
+    //        {
+    //            string text = quote["quote"];
+    //            string author = quote["name"];
+    //            <td>
+    //                <p>"@text"</p>
+    //                <p>- @author</p>
+    //            </td>
+    //        }
+
+    //</table>
+}

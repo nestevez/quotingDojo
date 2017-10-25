@@ -30,6 +30,7 @@ namespace quotingDojo.Controllers
         [Route("/quotes/")]
         public IActionResult PostQuotes(string name, string quote)
         {
+            DbConnector.Execute($"INSERT INTO quotes (name,quote) VALUES ('{name}', '{quote}')");
             return RedirectToAction("Quotes");
         }
     }
