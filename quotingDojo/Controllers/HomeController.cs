@@ -21,7 +21,7 @@ namespace quotingDojo.Controllers
         [Route("/quotes/")]
         public IActionResult Quotes()
         {
-            List<Dictionary<string, object>> AllQuotes = DbConnector.Query("SELECT * FROM quotes");
+            List<Dictionary<string, object>> AllQuotes = DbConnector.Query("SELECT * FROM quotes ORDER BY created_at DESC");
             ViewBag.allquotes = AllQuotes;
             return View();
         }

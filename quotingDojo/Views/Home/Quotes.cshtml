@@ -1,6 +1,9 @@
 @{
     ViewData["Title"] = "Quoting Dojo";
 }
+<form action="/" method="get">
+    <input type="submit" value="Submit a quote!"/>
+</form>
 <h2>Here are some awesome quotes!</h2>
 @{
     @for(int i = 0; i < @ViewBag.allquotes.Count; i++)
@@ -9,7 +12,8 @@
             @ViewBag.allquotes[i]["quote"]
         </p>
         <p>
-            - @ViewBag.allquotes[i]["name"]
+            @{DateTime time = @ViewBag.allquotes[i]["created_at"];}
+            - @ViewBag.allquotes[i]["name"] at @time.ToString("h:mmtt MMMM d yyyy")
         </p>
     }
 }
